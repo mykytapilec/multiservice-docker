@@ -1,7 +1,8 @@
 import express from 'express';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
+const HOST = '0.0.0.0';
 
 app.use(express.json());
 
@@ -12,6 +13,6 @@ app.get('/health', (_req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`API service listening on port ${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`API service listening on ${HOST}:${PORT}`);
 });
