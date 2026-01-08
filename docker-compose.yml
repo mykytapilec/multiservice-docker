@@ -1,11 +1,23 @@
 services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: multiservice-nginx
+    ports:
+      - "8082:80"
+    depends_on:
+      - frontend
+      - api
+    restart: unless-stopped
+
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: multiservice-frontend
-    ports:
-      - "8081:80"
+    expose:
+      - "80"
     depends_on:
       - api
     restart: unless-stopped
@@ -15,8 +27,8 @@ services:
       context: ./api
       dockerfile: Dockerfile
     container_name: multiservice-api
-    ports:
-      - "3002:3000"
+    expose:
+      - "3000"
     environment:
       PORT: 3000
       MONGODB_URI: mongodb://mongodb:27017/multiservice
