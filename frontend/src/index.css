@@ -7,4 +7,124 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 64px 24px;
+}
+
+.dashboard {
+  width: 100%;
+  max-width: 640px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin: 12px 0 32px;
+  color: #6b7280;
+}
+
+.service-card {
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 4%);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.service-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-badge.loading {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.connected {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.service-message,
+.service-details,
+.error-message {
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.service-message {
+  color: #6b7280;
+}
+
+.service-details p {
+  margin: 8px 0;
+}
+
+.error-message {
+  color: #b91c1c;
+}
+
+.retry-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.retry-button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.retry-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 40px 16px;
+  }
+
+  .service-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
