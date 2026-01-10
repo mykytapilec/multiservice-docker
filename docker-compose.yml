@@ -1,4 +1,12 @@
 services:
+  api-base:
+    image: multiservice-api-base:latest
+    build:
+      context: ./api
+      dockerfile: Dockerfile.base
+    profiles:
+      - build
+
   nginx:
     build:
       context: ./nginx
