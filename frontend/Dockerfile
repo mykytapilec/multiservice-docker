@@ -1,6 +1,4 @@
-FROM node:22-alpine AS builder
-
-WORKDIR /app
+FROM multiservice-frontend-base:latest AS builder
 
 COPY package*.json ./
 

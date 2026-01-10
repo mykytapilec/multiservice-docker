@@ -7,6 +7,14 @@ services:
     profiles:
       - build
 
+  frontend-base:
+    image: multiservice-frontend-base:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.base
+    profiles:
+      - build
+
   nginx:
     build:
       context: ./nginx
