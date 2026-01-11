@@ -29,3 +29,6 @@ coverage/
 # Docker
 .docker/
 *.tsbuildinfo
+
+# Docker secrets
+/secrets/
