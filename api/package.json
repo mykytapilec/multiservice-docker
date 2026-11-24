@@ -10,7 +10,9 @@
     "lint": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mongodb": "^7.9.1",
+    "redis": "^6.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
