@@ -1,6 +1,4 @@
-FROM node:22-alpine AS builder
-
-WORKDIR /app
+FROM multiservice-api-base:latest AS builder
 
 COPY package*.json ./
 
@@ -10,9 +8,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:22-alpine AS production
-
-WORKDIR /app
+FROM multiservice-api-base:latest AS production
 
 ENV NODE_ENV=production
 
